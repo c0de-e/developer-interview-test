@@ -1,10 +1,11 @@
-
 using Smartwyre.DeveloperTest.Types;
 
 namespace Smartwyre.DeveloperTest.Services.Calculations;
 
 public class CalculateFixedRateService : CalculateService
 {
+    public override IncentiveType IncentiveType => IncentiveType.FixedRateRebate;
+
     public override decimal CalculateRebate(CalculateRebateRequest request, Rebate rebate, Product product)
     {
         return product.Price * rebate.Percentage * request.Volume;

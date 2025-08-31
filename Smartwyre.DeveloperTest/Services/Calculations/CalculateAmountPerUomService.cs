@@ -1,10 +1,11 @@
-
 using Smartwyre.DeveloperTest.Types;
 
 namespace Smartwyre.DeveloperTest.Services.Calculations;
 
 public class CalculateAmountPerUomService : CalculateService
 {
+    public override IncentiveType IncentiveType => IncentiveType.AmountPerUom;
+
     public override decimal CalculateRebate(CalculateRebateRequest request, Rebate rebate, Product product)
     {
         return rebate.Amount * request.Volume;
@@ -20,4 +21,5 @@ public class CalculateAmountPerUomService : CalculateService
             return false;
         return true;
     }
+
 }

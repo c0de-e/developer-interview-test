@@ -21,6 +21,7 @@ class Program
         .AddSingleton<ICalculateIncentive, CalculateAmountPerUomService>()
         .AddSingleton<ICalculateIncentive, CalculateFixedCashAmountService>()
         .AddSingleton<ICalculateIncentive, CalculateFixedRateService>()
+        .AddSingleton<ICalculateIncentiveProvider, CalculateIncentiveProvider>()
         .BuildServiceProvider();
 
         var rebateService = serviceProvider.GetRequiredService<IRebateService>();

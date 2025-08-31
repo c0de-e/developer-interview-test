@@ -4,6 +4,8 @@ namespace Smartwyre.DeveloperTest.Services.Calculations;
 
 public class CalculateFixedCashAmountService : CalculateService
 {
+    public override IncentiveType IncentiveType => IncentiveType.FixedCashAmount;
+
     public override decimal CalculateRebate(CalculateRebateRequest request, Rebate rebate, Product product)
     {
         return rebate.Amount;
