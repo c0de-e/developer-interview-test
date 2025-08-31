@@ -5,6 +5,6 @@ namespace Smartwyre.DeveloperTest.Services.Interfaces;
 
 public interface ICalculateIncentive
 {
-    decimal CalculateRebate(CalculateRebateRequest request, Product product, Rebate rebate);
+    decimal CalculateRebate(CalculateRebateRequest request, Rebate rebate, Product product);
     bool IsValidRequest(CalculateRebateRequest request, Rebate rebate, Product product);
 }

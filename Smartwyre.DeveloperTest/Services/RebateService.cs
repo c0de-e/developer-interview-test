@@ -28,7 +28,7 @@ public class RebateService(IRebateDataStore rebateDataStore, IProductDataStore p
         var result = new CalculateRebateResult { Success = calculateService.IsValidRequest(request, rebate, product) };
         if (result.Success)
         {
-            decimal rebateAmount = calculateService.CalculateRebate(request, product, rebate);
+            decimal rebateAmount = calculateService.CalculateRebate(request, rebate, product);
             _rebateDataStore.StoreCalculationResult(rebate, rebateAmount);
         }
         return result;
