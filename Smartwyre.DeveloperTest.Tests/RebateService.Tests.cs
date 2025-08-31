@@ -142,4 +142,17 @@ public class RebateServiceTests
         Assert.Equal(0m, result);
         Assert.False(isValid);
     }
+
+    [Fact]
+    public void CalculateAmountPerUomService_ShouldReturnFalse_WhenIncentiveTypeNotSupported()
+    {
+        var request = new CalculateRebateRequest { Volume = 5m };
+        var product = new Product { SupportedIncentives = SupportedIncentiveType.FixedCashAmount };
+        var rebate = new Rebate { Incentive = IncentiveType.AmountPerUom, Amount = 10m };
+        var service = new CalculateAmountPerUomService();
+
+        var isValid = service.IsValidRequest(request, rebate, product);
+
+        Assert.False(isValid);
+    }
 }
